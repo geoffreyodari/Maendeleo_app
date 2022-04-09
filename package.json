@@ -1,7 +1,6 @@
 {
-  "name": "Maendeleo_app",
+  "name": "maendeleo_app",
   "version": "1.0.0",
-  "description": "",
   "main": "config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,5 +14,15 @@
     "cors": "^2.8.5",
     "express": "^4.17.3",
     "mongoose": "^6.2.10"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geoffreyodari/Maendeleo_app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/geoffreyodari/Maendeleo_app/issues"
+  },
+  "homepage": "https://github.com/geoffreyodari/Maendeleo_app#readme",
+  "description": ""
 }
