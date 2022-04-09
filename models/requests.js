@@ -1,8 +1,17 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
+let StatusSchema = new Schema   ({
+                                timestamp: String,
+                                state: String,
+                                comments: String
+                                
+                                })
+
+let IssuesSchema = new Schema   (  { item: String } )
+
 
 let requestSchema = new Schema(
-                                {
+                                {   
                                     timestamp:Date, 
                                     name:String,
                                     phone:String,
@@ -14,15 +23,15 @@ let requestSchema = new Schema(
                                     receipt:String,
                                     warranty:Boolean,
                                     physical_condition:String,
-                                    Issues:Array,
+                                    issues:[IssuesSchema],
                                     retail_centre:String,
                                     repair_centre:String,
                                     waybill_to_repair:String,
                                     waybill_to_retail:String,
-                                    status:Array
+                                    status:[StatusSchema]
                                 }
                             )
 
-let Request = mongoose.model('Request',requestSchema)
+let Request = mongoose.model('service_request',requestSchema)
 
 module.exports = Request;

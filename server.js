@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
+const retailRoutes = require('./routes/retailRoutes') //new code
+
 // Initializing express
 const app = express()
 
@@ -32,6 +34,10 @@ db.on('error', (error)=>{
     console.log(error);
  
  })
+
+// Use retail Routes
+app.use('/retail/requests/', retailRoutes)  
+
 
  // Define the PORT
 const PORT = process.env.PORT || 5000
