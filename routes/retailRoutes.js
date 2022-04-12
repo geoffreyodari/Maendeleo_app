@@ -22,5 +22,22 @@ router.get('/', (req,res)=>{
  })
 
 
+// @route GET /requests/:id
+// @desc  get a single request based on ID
+
+ router.get('/:id', (req,res)=>{
+
+    // Fetch all request from database
+
+    Request.findOne({_id:req.params.id},(error, data)=>{
+ 
+        if (error) console.log(error)
+        res.json(data)
+ 
+    })
+ 
+ })
+
+
 
  module.exports = router;
