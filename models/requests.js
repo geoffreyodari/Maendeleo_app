@@ -5,8 +5,8 @@ let indexRouter = require('./routes/retailRoutes');
 
 //connecting to teh database
 let mongodb_url = 'mongodb.//localhost/';
-let dbname = 'Alternative_contact';
-mongoose.connect('mongodb_https//localhost/Alternative_contact',);
+let dbname = 'service_request';
+mongoose.connect('mongodb_https//localhost/service_request',);
 let db = mongoose.connection;
 
 //check
