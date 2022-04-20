@@ -5,8 +5,8 @@ let indexRouter = require('./routes/retailRoutes');
 
 //connecting to teh database
 let mongodb_url = 'mongodb.//localhost/';
-let dbname = 'service_request';
-mongoose.connect('mongodb_https//localhost/service_request',);
+let dbname = 'test';
+mongoose.connect('mongodb_https//localhost/test',);
 let db = mongoose.connection;
 
 //check
@@ -16,5 +16,5 @@ db.once('open', () =>{
 
 //check error
 db.eror('error', (error) =>{
-    conole.log('error');
+    console.log('error');
 })
