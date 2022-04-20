@@ -3,7 +3,7 @@ const router = express.Router();
 const Repair_details = require('../models/requests');
 
 
-// @route PUT api/repair/:id
+// @route PUT retail/:id
 // @desc  Update a retail repair item
    router.put('/:id',(req,res)=>{
      
@@ -15,7 +15,10 @@ const Repair_details = require('../models/requests');
             timestamp: new Date(),    
             state: req.body.status[0].state,
             comments: req.body.status[0].comments
-        }
+        },
+        waybill_to_repair: req.body.waybill_to_repair,
+        waybill_to_retail: req.body.waybill_to_retail
+
        };
                
         Repair_details.updateOne({_id:req.params.id},{$set:update},

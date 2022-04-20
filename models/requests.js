@@ -11,7 +11,7 @@ let statusSchema = new Schema   ({
 let issuesSchema = new Schema({ 
     item: String 
 })
-let retailUpdate = new Schema({
+let retailSchema = new Schema({
     Timestamp: {type:Date,default: Date()},
     Name: String,
     phone: String,
@@ -32,7 +32,7 @@ let retailUpdate = new Schema({
         
  })
 
- let Request = mongoose.model('service_request', retailUpdate)
+ let Request = mongoose.model('service_request', retailSchema)
 
 module.exports = Request;
 
