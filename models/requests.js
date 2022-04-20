@@ -31,6 +31,6 @@ let retailUpdate = new Schema({
         
  })
 
- let Retail_updates = mongoose.model('service_request', retailUpdate)
- 
- module.exports = Retail_updates;
+ let Request = mongoose.model('service_request', retailUpdate)
+
+module.exports = Request;
