@@ -11,8 +11,24 @@ let issuesSchema = new Schema({
     item: String 
 })
 let retailUpdate = new Schema({
-        issues:[issuesSchema],
-        status:[statusSchema]
+    Timestamp: {type:Date,default: Date()},
+    Name: String,
+    phone: String,
+    email: String,
+    national_id: String,
+    model: String,
+    imei: String,
+    serial: String,
+    receipt: String,
+    warranty: Boolean,
+    physical_condition: String,
+    Issues:[issuesSchema],
+    retail_centre: String,
+    repair_centre: String,
+    waybill_to_repair: String,
+    waybill_to_retail: String,
+    status:[statusSchema]    
+        
  })
 
  let Retail_updates = mongoose.model('service_request', retailUpdate)
