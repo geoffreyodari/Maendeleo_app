@@ -1,20 +1,38 @@
-const express = require("expreass");
-const mongoose = require("mongoose");
 
-let indexRouter = require('./routes/retailRoutes');
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema;
 
-//connecting to teh database
-let mongodb_url = 'mongodb.//localhost/';
-let dbname = 'test';
-mongoose.connect('mongodb_https//localhost/test',);
-let db = mongoose.connection;
-
-//check
-db.once('open', () =>{
-    console.log('Database connected successfully');
+let statusSchema = new Schema   ({
+    timestamp: {type:Date,default: Date()},
+    state: String,
+    comments: String
+    
 })
-
-//check error
-db.eror('error', (error) =>{
-    console.log('error');
+let issuesSchema = new Schema({ 
+    item: String 
 })
+let retailUpdate = new Schema({
+    Timestamp: {type:Date,default: Date()},
+    Name: String,
+    phone: String,
+    email: String,
+    national_id: String,
+    model: String,
+    imei: String,
+    serial: String,
+    receipt: String,
+    warranty: Boolean,
+    physical_condition: String,
+    Issues:[issuesSchema],
+    retail_centre: String,
+    repair_centre: String,
+    waybill_to_repair: String,
+    waybill_to_retail: String,
+    status:[statusSchema]    
+        
+ })
+
+ let Request = mongoose.model('service_request', retailUpdate)
+
+module.exports = Request;
+
