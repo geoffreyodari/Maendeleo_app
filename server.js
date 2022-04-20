@@ -1,3 +1,4 @@
+
 const express = require('express');
 const mongoose = require('mongoose');
 
@@ -37,6 +38,9 @@ db.on('error', (error)=>{
 
 // Use retail Routes
 app.use('/retail/requests/', retailRoutes)  
+
+// Update Routes
+app.use('/retail', retailRoutes)
 
 
  // Define the PORT
