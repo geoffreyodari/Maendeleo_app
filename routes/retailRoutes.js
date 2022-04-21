@@ -6,25 +6,28 @@ const Repair_details = require('../models/requests');
 // @route PUT retail/:id
 // @desc  Update a retail repair item
    router.put('/:id',(req,res)=>{
-     
+
+    var i = 0;
+    //for (i=0; i<req.body.Issues.length; i++){
+        //console.log(req.body.Issues[i].item)
+        
     let update = {
         Issues: {
-            item: req.body.Issues[0].item
+            item: req.body.Issues[i].item,
+            item: req.body.Issues[i].item
         },                 
         status: {
-            timestamp: new Date(),    
-            state: req.body.status[0].state,
-            comments: req.body.status[0].comments
+            timestamp: new Date().toString(),    
+            state: req.body.status[i].state,
+            comments: req.body.status[i].comments
         },
         waybill_to_repair: req.body.waybill_to_repair,
         waybill_to_retail: req.body.waybill_to_retail
-
-       };
-               
-        Repair_details.updateOne({_id:req.params.id},{$set:update},
+       }  
+        Repair_details.findOneAndUpdate({_id:req.params.id},{$set:update},
             {upsert:true},
             (err,success)=>(err)?res.json(err):res.json({success}))
-    
+
 })
 
 
@@ -64,8 +67,6 @@ router.get('/', (req,res)=>{
     })
  
  })
-
-
 
  module.exports = router;
 
