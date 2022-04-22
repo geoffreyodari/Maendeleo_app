@@ -4,6 +4,20 @@ const Repair_details = require('../models/requests');
 //requests model
 const Request = require('../models/requests');
 
+
+// @route POST /requests/
+// @desc  Post a single request 
+
+router.post('/',(req,res)=>{
+    let newRequest = new Request(req.body)
+    newRequest.save((err,success)=> {(!err)? res.json(success):res.json(err);
+      })
+    
+})
+
+
+
+
 // @route PUT api/repair/:id
 // @desc  Update a retail repair item
    router.put('/:id',(req,res)=>{
@@ -61,6 +75,9 @@ router.get('/', (req,res)=>{
     })
  
  })
+
+
+ 
 
 
 
