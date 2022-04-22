@@ -1,7 +1,8 @@
 const express = require('express')
 const router = express.Router();
 const Repair_details = require('../models/requests');
-
+//requests model
+const Request = require('../models/requests');
 
 // @route PUT api/repair/:id
 // @desc  Update a retail repair item
@@ -25,8 +26,7 @@ const Repair_details = require('../models/requests');
 })
 
 
-//requests model
-const Request = require('../models/requests');
+
 
 // @route GET /requests
 
