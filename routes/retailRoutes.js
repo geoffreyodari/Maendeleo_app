@@ -1,6 +1,21 @@
 const express = require('express')
 const router = express.Router();
 const Repair_details = require('../models/requests');
+//requests model
+const Request = require('../models/requests');
+
+
+// @route POST /requests/
+// @desc  Post a single request 
+
+router.post('/',(req,res)=>{
+    let newRequest = new Request(req.body)
+    newRequest.save((err,success)=> {(!err)? res.json(success):res.json(err);
+      })
+    
+})
+
+
 
 
 // @route PUT retail/:id
@@ -31,8 +46,7 @@ const Repair_details = require('../models/requests');
 })
 
 
-//requests model
-const Request = require('../models/requests');
+
 
 // @route GET /requests
 
