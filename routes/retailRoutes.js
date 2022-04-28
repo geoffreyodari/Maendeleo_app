@@ -114,5 +114,20 @@ router.get('/national_id/:id', (req,res)=>{
  })
 
 
+ // @route GET /requests/imei/:id
+// @desc  get requests based on device imei
+
+router.get('/imei/:id', (req,res)=>{
+
+    // Fetch all request from database based on device IMEI
+ 
+     Request.find({ imei:req.params.id},(error, data)=>{
+ 
+    (error)? console.log(error):res.json(data)
+ 
+    })
+ 
+ })
+
  module.exports = router;
 
