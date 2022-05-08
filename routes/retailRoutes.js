@@ -16,38 +16,6 @@ router.post('/',(req,res)=>{
 })
 
 
-
-
-// @route PUT retail/:id
-// @desc  Update a retail repair item
-   router.put('/:id',(req,res)=>{
-
-    var i = 0;
-    //for (i=0; i<req.body.Issues.length; i++){
-        //console.log(req.body.Issues[i].item)
-        
-    let update = {
-        Issues: {
-            item: req.body.Issues[i].item,
-            item: req.body.Issues[i].item
-        },                 
-        status: {
-            timestamp: new Date().toString(),    
-            state: req.body.status[i].state,
-            comments: req.body.status[i].comments
-        },
-        waybill_to_repair: req.body.waybill_to_repair,
-        waybill_to_retail: req.body.waybill_to_retail
-       }  
-        Repair_details.findOneAndUpdate({_id:req.params.id},{$set:update},
-            {upsert:true},
-            (err,success)=>(err)?res.json(err):res.json({success}))
-
-})
-
-
-
-
 // @route GET /requests
 
 // @desc Get ALL requests
@@ -128,6 +96,45 @@ router.get('/imei/:id', (req,res)=>{
     })
  
  })
+
+ // @route PUT retail/:id
+// @desc  Update a retail repair item and status
+router.put('/issues/:id',(req,res)=>{
+
+    var i = 0;
+
+    let update = {
+        Issues: {
+            item: req.body.Issues[i].item,
+            item: req.body.Issues[i].item
+        },                 
+        status: {
+            timestamp: new Date().toString(),    
+            state: req.body.status[i].state,
+            comments: req.body.status[i].comments
+        },
+       }  
+        Repair_details.findOneAndUpdate({_id:req.params.id},{$set:update},
+            {upsert:true},
+            (err,success)=>(err)?res.json(err):res.json({success}))
+
+})
+
+// @route PUT retail/:id
+// @desc  Update a waybill number
+router.put('/waybill/:id',(req,res)=>{
+
+    let update = {
+        
+        waybill_to_repair: req.body.waybill_to_repair,
+        waybill_to_retail: req.body.waybill_to_retail
+       }  
+        Repair_details.findOneAndUpdate({_id:req.params.id},{$set:update},
+            {upsert:true},
+            (err,success)=>(err)?res.json(err):res.json({success}))
+
+})
+
 
  module.exports = router;
 
