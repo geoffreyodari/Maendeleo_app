@@ -8,9 +8,48 @@ let statusSchema = new Schema   ({
     comments: String
     
 })
-let issuesSchema = new Schema({ 
-    item: String 
+
+let issuesSchema = new Schema({
+
+    display:{	
+                cracked:Boolean,
+                notWorking:Boolean,
+                noTouch:Boolean
+            },
+    power:{
+                notPoweringUp:Boolean,
+                notCharging:Boolean,
+                shortBatteryLife:Boolean
+            },
+    speaker:{
+                noSound:Boolean,
+                distortedSound:Boolean,
+                notRinging:Boolean
+    },
+    network:{
+                noMobileNetwork:Boolean,
+                noWifiNetwork:Boolean,
+                droppedCalls:Boolean,
+                unableToCall:Boolean
+    },
+    physicalDamage:{	
+            faultyKeys:Boolean,
+            crackedBody:Boolean
+    },
+    software:{
+            slow:Boolean,
+            crashing:Boolean,
+            hanging:Boolean
+    }	
+
 })
+
+
+let accessoriesSchema = new Schema   ({
+    battery:Boolean,
+    charger:Boolean
+})
+
 let retailSchema = new Schema({
     Timestamp: {type:Date,default: Date()},
     Name: String,
@@ -22,8 +61,10 @@ let retailSchema = new Schema({
     serial: String,
     receipt: String,
     warranty: Boolean,
+    lipaMdogoMdogo:Boolean,
+	accessories:accessoriesSchema,
     physical_condition: String,
-    Issues:[issuesSchema],
+    Issues:issuesSchema,
     retail_centre: String,
     repair_centre: String,
     waybill_to_repair: String,
