@@ -97,7 +97,7 @@ router.get('/imei/:id', (req,res)=>{
  
  })
 
- // @route PUT retail/:id
+/*  // @route PUT retail/:id
 // @desc  Update a retail repair item and status
 router.put('/issues/:id',(req,res)=>{
 
@@ -107,6 +107,50 @@ router.put('/issues/:id',(req,res)=>{
         Issues: {
             item: req.body.Issues[i].item,
             item: req.body.Issues[i].item
+        },                 
+        status: {
+            timestamp: new Date().toString(),    
+            state: req.body.status[i].state,
+            comments: req.body.status[i].comments
+        },
+       }  
+        Repair_details.findOneAndUpdate({_id:req.params.id},{$set:update},
+            {upsert:true},
+            (err,success)=>(err)?res.json(err):res.json({success}))
+
+}) */
+
+ // @route PUT retail/:id
+// @desc  Update a retail repair item and status
+router.put('/issues/:id',(req,res)=>{
+
+    var i = 0;
+
+    let update = {
+        Issues: {
+            display: req.body.Issues.display.cracked,
+            display: req.body.Issues.display.notWorking,
+            display: req.body.Issues.display.noTouch,
+
+            power: req.body.Issues.power.notPoweringUp,
+            power: req.body.Issues.power.notCharging,
+            power: req.body.Issues.power.shortBatteryLife,
+
+            speaker: req.body.Issues.speaker.noSound,
+            speaker: req.body.Issues.speaker.distortedSound,
+            speaker: req.body.Issues.speaker.notRinging,
+
+            network: req.body.Issues.network.noMobileNetwork,
+            network: req.body.Issues.network.noWifiNetwork,
+            network: req.body.Issues.network.droppedCalls,
+            network: req.body.Issues.network.unableToCall,
+
+            physicalDamage: req.body.Issues.physicalDamage.faultyKeys,
+            physicalDamage: req.body.Issues.physicalDamage.crackedBody,
+
+            software: req.body.Issues.software.slow,
+            software: req.body.Issues.software.crashing,
+            software: req.body.Issues.software.hanging,
         },                 
         status: {
             timestamp: new Date().toString(),    
