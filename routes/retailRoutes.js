@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router();
-const Repair_details = require('../models/requests');
 //requests model
 const Request = require('../models/requests');
 
@@ -128,29 +127,36 @@ router.put('/issues/:id',(req,res)=>{
 
     let update = {
         Issues: {
-            display: req.body.Issues.display.cracked,
-            display: req.body.Issues.display.notWorking,
-            display: req.body.Issues.display.noTouch,
-
-            power: req.body.Issues.power.notPoweringUp,
-            power: req.body.Issues.power.notCharging,
-            power: req.body.Issues.power.shortBatteryLife,
-
-            speaker: req.body.Issues.speaker.noSound,
-            speaker: req.body.Issues.speaker.distortedSound,
-            speaker: req.body.Issues.speaker.notRinging,
-
-            network: req.body.Issues.network.noMobileNetwork,
-            network: req.body.Issues.network.noWifiNetwork,
-            network: req.body.Issues.network.droppedCalls,
-            network: req.body.Issues.network.unableToCall,
-
-            physicalDamage: req.body.Issues.physicalDamage.faultyKeys,
-            physicalDamage: req.body.Issues.physicalDamage.crackedBody,
-
-            software: req.body.Issues.software.slow,
-            software: req.body.Issues.software.crashing,
-            software: req.body.Issues.software.hanging,
+            display: {
+                cracked: req.body.Issues[i].display[i].cracked,
+                notWorking: req.body.Issues[i].display[i].notWorking,
+                noTouch: req.body.Issues[i].display[i].noTouch,
+            },
+            power: {
+                notPoweringUp: req.body.Issues[i].power[i].notPoweringUp,
+                notCharging: req.body.Issues[i].power[i].notCharging,
+                shortBatteryLife: req.body.Issues[i].power[i].shortBatteryLife,
+            },
+            speaker: {
+                noSound: req.body.Issues[i].speaker[i].noSound,
+                distortedSound: req.body.Issues[i].speaker[i].distortedSound,
+                notRinging: req.body.Issues[i].speaker[i].notRinging,
+            },
+            network: {
+                noMobileNetwork: req.body.Issues[i].network[i].noMobileNetwork,
+                noWifiNetwork: req.body.Issues[i].network[i].noWifiNetwork,
+                droppedCalls: req.body.Issues[i].network[i].droppedCalls,
+                unableToCall: req.body.Issues[i].network[i].unableToCall,
+            },
+            physicalDamage: {
+                faultyKeys: req.body.Issues[i].physicalDamage[i].faultyKeys,
+                crackedBody: req.body.Issues[i].physicalDamage[i].crackedBody,
+            },
+            software: {
+                slow: req.body.Issues[i].software[i].slow,
+                crashing: req.body.Issues[i].software[i].crashing,
+                hanging: req.body.Issues[i].software[i].hanging,
+            }
         },                 
         status: {
             timestamp: new Date().toString(),    
@@ -158,7 +164,7 @@ router.put('/issues/:id',(req,res)=>{
             comments: req.body.status[i].comments
         },
        }  
-        Repair_details.findOneAndUpdate({_id:req.params.id},{$set:update},
+        Request.updateOne({_id:req.params.id},{$set:update},
             {upsert:true},
             (err,success)=>(err)?res.json(err):res.json({success}))
 

@@ -62,7 +62,7 @@ let retailSchema = new Schema({
     receipt: String,
     warranty: Boolean,
     lipaMdogoMdogo:Boolean,
-	accessories:accessoriesSchema,
+    accessories:accessoriesSchema,
     physical_condition: String,
     Issues:issuesSchema,
     retail_centre: String,
