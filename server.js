@@ -1,6 +1,7 @@
 
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors')
 
 const retailRoutes = require('./routes/retailRoutes') //new code
 
@@ -9,6 +10,9 @@ const app = express()
 
 // Body parser middleware
 app.use(express.json())
+
+//enabling cors
+app.use(cors())
 
 //DB config
 
