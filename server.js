@@ -2,7 +2,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors')
-
+const favicon = require('serve-favicon')
+const path = require('path')
 
 
 const retailRoutes = require('./routes/retailRoutes') //new code
@@ -10,6 +11,8 @@ const retailRoutes = require('./routes/retailRoutes') //new code
 // Initializing express
 const app = express()
 
+// add favicon
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 // Body parser middleware
 app.use(express.json())
