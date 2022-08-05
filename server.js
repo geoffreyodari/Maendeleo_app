@@ -50,6 +50,9 @@ app.use('/retail/requests/', retailRoutes)
 // Update Routes
 app.use('/retail', retailRoutes)
 
+// Update Routes
+app.use('/', retailRoutes)
+
 
  // Define the PORT
 const PORT = process.env.PORT || 5001
