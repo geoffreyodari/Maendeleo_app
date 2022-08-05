@@ -11,7 +11,7 @@ const retailRoutes = require('./routes/retailRoutes') //new code
 // Initializing express
 const app = express()
 
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+app.use(favicon(path.join(__dirname, '/', 'favicon.ico')))
 // Body parser middleware
 app.use(express.json())
 
