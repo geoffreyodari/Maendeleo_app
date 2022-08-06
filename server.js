@@ -2,11 +2,17 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors')
+const favicon = require('serve-favicon')
+const path = require('path')
+
 
 const retailRoutes = require('./routes/retailRoutes') //new code
 
 // Initializing express
 const app = express()
+
+// add favicon
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 // Body parser middleware
 app.use(express.json())
@@ -46,9 +52,12 @@ app.use('/retail/requests/', retailRoutes)
 // Update Routes
 app.use('/retail', retailRoutes)
 
+// Update Routes
+app.use('/', retailRoutes)
+
 
  // Define the PORT
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5001
 
 app.listen(PORT, ()=>{
     console.log(`Server listening on port ${PORT}`)
