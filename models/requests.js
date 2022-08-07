@@ -56,6 +56,7 @@ let retailSchema = new Schema({
     phone: String,
     email: String,
     national_id: String,
+    brand: String,
     model: String,
     imei: String,
     serial: String,
