@@ -5,7 +5,8 @@ const Schema = mongoose.Schema;
 let statusSchema = new Schema   ({
     timestamp: {type:Date,default: Date()},
     state: String,
-    comments: String
+    comments: String,
+    username:String
     
 })
 
