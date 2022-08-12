@@ -96,6 +96,17 @@ router.get('/imei/:id', (req,res)=>{
  
  })
 
+  // @route GET /requests/status/:id
+// @desc  get requests based on status
+router.get('/status/:id', (req, res) => {
+
+        Request.find( { status: {$elemMatch: {state: req.params.id} } },(error, data)=>{
+            
+            (error)? console.log(error):res.json(data)
+         
+            })
+    });
+
  // @route PUT retail/:id
 // @desc  Update a retail repair item and status
 router.put('/issues/:id',(req,res)=>{
