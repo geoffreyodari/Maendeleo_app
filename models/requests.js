@@ -5,7 +5,8 @@ const Schema = mongoose.Schema;
 let statusSchema = new Schema   ({
     timestamp: {type:Date,default: Date()},
     state: String,
-    comments: String
+    comments: String,
+    username:String
     
 })
 
@@ -56,6 +57,7 @@ let retailSchema = new Schema({
     phone: String,
     email: String,
     national_id: String,
+    altPhone:String,
     brand: String,
     model: String,
     imei: String,
@@ -66,6 +68,10 @@ let retailSchema = new Schema({
     accessories:accessoriesSchema,
     physical_condition: String,
     Issues:issuesSchema,
+    standByUnit:Boolean,
+    standByUnitBrand:String,
+    standByUnitModel:String,
+    standByUnitSerial:String,
     retail_centre: String,
     repair_centre: String,
     waybill_to_repair: String,
