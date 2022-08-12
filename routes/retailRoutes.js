@@ -103,8 +103,6 @@ router.get('/status/:id', (req, res) => {
         Request.find( { status: {$elemMatch: {state: req.params.id} } },(error, data)=>{
             
             (error)? console.log(error):res.json(data)
-
-            console.log("RESPONSE - " +data);
          
             })
     });
