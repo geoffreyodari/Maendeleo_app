@@ -77,7 +77,9 @@ The application has four levels of access:
 ## Setup
 <li>runs on http://localhost:3000.
 <li>You need to install the technologies said above to run the program on windows.
-<p>Here are Postman Instructions<p>
+
+
+<p>Here are Postman Instructions for the back-end<p>
 
 
 ![tag](/postman.PNG)
