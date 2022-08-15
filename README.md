@@ -110,16 +110,16 @@ curl --location --request GET 'http://localhost:5000/retail/requests/'
 <p>Example Request
 <p>curl --location --request POST 'http://localhost:5000/retail/requests/' \
  --data-raw '{ 
-    "Name": "Joe Biden",
-    "phone": "0722000300",
-    "email": "biden@email.com",
-    "national_id": "66666777",
-    "model": "Huawei",
-    "imei": "52176666333",
-    "serial": "52176666333",
-    "receipt": "34567",
-    "warranty": true,
-     "physical_condition": "damaged"  
+    <p>"Name": "Joe Biden",
+    <p>"phone": "0722000300",
+    <p>"email": "biden@email.com",
+    <p>"national_id": "66666777",
+    <p>"model": "Huawei",
+    <p>"imei": "52176666333",
+    <p>"serial": "52176666333",
+    <p>"receipt": "34567",
+    <p>"warranty": true,
+    <p> "physical_condition": "damaged"  
         
  }'
 
