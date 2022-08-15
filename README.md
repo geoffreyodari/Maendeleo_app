@@ -78,19 +78,18 @@ The application has four levels of access:
 <li>runs on http://localhost:3000.
 <li>You need to install the technologies said above to run the program on windows.
 <p>Here are Postman Instructions<p>
-image.png
+
 <li>view all requests:
-</>
 curl --location --request GET 'http://localhost:5000/retail/requests/'image.png
 
-<li>view based on phone:
+<p>view based on phone:
 GETview based on phone
 <li>curl --location --request GET 'http://localhost:5000/retail/requests/phone/0722030300'
 
 <li>:PATH VARIABLES
 phone:  0722030300
 
-<li>view based on imei
+<p>view based on imei
 GETview based on imei
 <li>curl --location --request GET 'http://localhost:5000/retail/requests/imei/52176666333'
 
@@ -98,7 +97,7 @@ GETview based on imei
 id:  52176666333
 
 
-<li>view based on status
+<p>view based on status
 GETview based on status
 <li>curl --location --request GET 'http://localhost:5001/retail/requests/status/Pending'
 
@@ -106,9 +105,9 @@ GETview based on status
 status: Pending
 
 
-<li>insert new request
+<p>insert new request
 POSTinsert new request
-<h3>Example Request<h3>
+Example Request
 curl --location --request POST 'http://localhost:5000/retail/requests/' \
 --data-raw '{ 
     "Name": "Joe Biden",
@@ -125,7 +124,7 @@ curl --location --request POST 'http://localhost:5000/retail/requests/' \
  }'
 
 
-<li>update retail repair request
+<p>update retail repair request
 PUTupdate retail repair request
 <li> curl --location --request PUT 'http://localhost:5001/retail/issues/62f10de18da442cf3f39c88e' \
 --data-raw '
@@ -134,7 +133,7 @@ PUTupdate retail repair request
 '
 
 
-<li>update waybill number
+<p>update waybill number
 PUTupdate waybill number
 <li>curl --location --request PUT 'http://localhost:5001/retail/waybill/6262b27c4f7e7cd201f74181' \
 --data-raw '{
