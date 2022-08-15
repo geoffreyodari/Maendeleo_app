@@ -80,7 +80,6 @@ The application has four levels of access:
 <p>Here are Postman Instructions<p>
 
 
-![Postman](/postman.png)
 ![tag](/postman.PNG)
 
 <li>view all requests:
