@@ -78,12 +78,10 @@ The application has four levels of access:
 <li>runs on http://localhost:3000.
 <li>You need to install the technologies said above to run the program on windows.
 <p>Here are Postman Instructions<p>
-![image](https://maendeleo_app/postman.png)
-![image](https://C/users/emokua/projects/maendeleo_app/postman.png)
-<img src="postman.png">
+
+
 ![Postman](/postman.png)
-![postman](postman.png)
-![tag](postman.PNG)
+![tag](/postman.PNG)
 
 <li>view all requests:
 curl --location --request GET 'http://localhost:5000/retail/requests/'
