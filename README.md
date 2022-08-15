@@ -83,6 +83,64 @@ image.png
 </>
 curl --location --request GET 'http://localhost:5000/retail/requests/'image.png
 
+<li>view based on phone:
+GETview based on phone
+<li>curl --location --request GET 'http://localhost:5000/retail/requests/phone/0722030300'
+
+<li>:PATH VARIABLES
+phone:  0722030300
+
+<li>view based on imei
+GETview based on imei
+<li>curl --location --request GET 'http://localhost:5000/retail/requests/imei/52176666333'
+
+<li> PATH VARIABLES
+id:  52176666333
+
+
+<li>view based on status
+GETview based on status
+<li>curl --location --request GET 'http://localhost:5001/retail/requests/status/Pending'
+
+<li> PATH VARIABLES
+status: Pending
+
+
+<li>insert new request
+POSTinsert new request
+<h3>Example Request<h3>
+curl --location --request POST 'http://localhost:5000/retail/requests/' \
+--data-raw '{ 
+    "Name": "Joe Biden",
+    "phone": "0722000300",
+    "email": "biden@email.com",
+    "national_id": "66666777",
+    "model": "Huawei",
+    "imei": "52176666333",
+    "serial": "52176666333",
+    "receipt": "34567",
+    "warranty": true,
+     "physical_condition": "damaged"  
+        
+ }'
+
+
+<li>update retail repair request
+PUTupdate retail repair request
+<li> curl --location --request PUT 'http://localhost:5001/retail/issues/62f10de18da442cf3f39c88e' \
+--data-raw '
+
+    {"status":  { "state": "Closed", "comments": "comment" }}
+'
+
+
+<li>update waybill number
+PUTupdate waybill number
+<li>curl --location --request PUT 'http://localhost:5001/retail/waybill/6262b27c4f7e7cd201f74181' \
+--data-raw '{
+    "waybill_to_repair": "1234567890",
+    "waybill_to_retail": "1234567890" 
+}'
 
 ## Usage
 Just log in
