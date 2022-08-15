@@ -77,6 +77,9 @@ The application has four levels of access:
 ## Setup
 <li>runs on http://localhost:3000.
 <li>You need to install the technologies said above to run the program on windows.
+<p>Here are Postman Instaructions<p>
+<li>view all requests
+curl --location --request GET 'http://localhost:5000/retail/requests/'
 
 ## Usage
 Just log in
