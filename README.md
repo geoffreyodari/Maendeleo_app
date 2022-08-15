@@ -79,73 +79,10 @@ The application has four levels of access:
 <li>You need to install the technologies said above to run the program on windows.
 
 
-<p>Here are Postman Instructions for the back-end<p>
+<p>Here is the Postman API and documentation for the back-end<p>
 <link> https://documenter.getpostman.com/view/5944509/VUjSGPYo
 
 
-![tag](/postman.PNG)
-
-<li>view all requests:
-curl --location --request GET 'http://localhost:5000/retail/requests/'
-
-<p>view based on phone:
-<p>GETview based on phone
-<li>curl --location --request GET 'http://localhost:5000/retail/requests/phone/0722030300'
-
-<li>PATH VARIABLES
-<p>phone:  0722030300
-
-<p>view based on imei
-<p>GETview based on imei
-<li>curl --location --request GET 'http://localhost:5000/retail/requests/imei/52176666333'
-
-<li> PATH VARIABLES
-<p>id:  52176666333
-
-
-<p>view based on status
-<p>GETview based on status
-<li>curl --location --request GET 'http://localhost:5001/retail/requests/status/Pending'
-
-<li> PATH VARIABLES
-<p>status: Pending
-
-
-<p>insert new request
-<p>POSTinsert new request
-<p>Example Request
-<p>curl --location --request POST 'http://localhost:5000/retail/requests/' \
- --data-raw '{ 
-    <p>"Name": "Joe Biden",
-    <p>"phone": "0722000300",
-    <p>"email": "biden@email.com",
-    <p>"national_id": "66666777",
-    <p>"model": "Huawei",
-    <p>"imei": "52176666333",
-    <p>"serial": "52176666333",
-    <p>"receipt": "34567",
-    <p>"warranty": true,
-    <p> "physical_condition": "damaged"  
-        
- }'
-
-
-<p>update retail repair request
-<p>PUTupdate retail repair request
-<li> curl --location --request PUT 'http://localhost:5001/retail/issues/62f10de18da442cf3f39c88e' \
---data-raw '
-
-    {"status":  { "state": "Closed", "comments": "comment" }}
-'
-
-
-<p>update waybill number
-<p>PUTupdate waybill number
-<li>curl --location --request PUT 'http://localhost:5001/retail/waybill/6262b27c4f7e7cd201f74181' \
---data-raw '{
-    "waybill_to_repair": "1234567890",
-    "waybill_to_retail": "1234567890" 
-}'
 
 ## Usage
 Just log in
