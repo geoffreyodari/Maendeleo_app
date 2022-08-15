@@ -78,7 +78,7 @@ The application has four levels of access:
 <li>runs on http://localhost:3000.
 <li>You need to install the technologies said above to run the program on windows.
 <p><h4>Here are Postman Instructions<h4><p>
-
+![image](https://maendeleo_app/postman.png)
 <li>view all requests:
 curl --location --request GET 'http://localhost:5000/retail/requests/'
 
@@ -171,8 +171,3 @@ Created by:
 <li>Racheal Gathagu
 <li>Enoch Maonga
 
-
-
-<!-- Optional -->
-<!-- ## MIT -->
-<!-- This project is open source and available under the [... MIT](). -->
