@@ -111,48 +111,14 @@ router.get('/status/:id', (req, res) => {
 // @desc  Update a retail repair item and status
 router.put('/issues/:id',(req,res)=>{
 
-    var i = 0;
 
     let update = {
-        Issues: {
-            display: {
-                cracked: req.body.Issues[i].display[i].cracked,
-                notWorking: req.body.Issues[i].display[i].notWorking,
-                noTouch: req.body.Issues[i].display[i].noTouch,
-            },
-            power: {
-                notPoweringUp: req.body.Issues[i].power[i].notPoweringUp,
-                notCharging: req.body.Issues[i].power[i].notCharging,
-                shortBatteryLife: req.body.Issues[i].power[i].shortBatteryLife,
-            },
-            speaker: {
-                noSound: req.body.Issues[i].speaker[i].noSound,
-                distortedSound: req.body.Issues[i].speaker[i].distortedSound,
-                notRinging: req.body.Issues[i].speaker[i].notRinging,
-            },
-            network: {
-                noMobileNetwork: req.body.Issues[i].network[i].noMobileNetwork,
-                noWifiNetwork: req.body.Issues[i].network[i].noWifiNetwork,
-                droppedCalls: req.body.Issues[i].network[i].droppedCalls,
-                unableToCall: req.body.Issues[i].network[i].unableToCall,
-            },
-            physicalDamage: {
-                faultyKeys: req.body.Issues[i].physicalDamage[i].faultyKeys,
-                crackedBody: req.body.Issues[i].physicalDamage[i].crackedBody,
-            },
-            software: {
-                slow: req.body.Issues[i].software[i].slow,
-                crashing: req.body.Issues[i].software[i].crashing,
-                hanging: req.body.Issues[i].software[i].hanging,
-            }
-        },                 
-        status: {
             timestamp: new Date().toString(),    
-            state: req.body.status[i].state,
-            comments: req.body.status[i].comments
-        },
-       }  
-        Request.findOneAndUpdate({_id:req.params.id},{$set:update},
+            state: req.body.status.state,
+            comments: req.body.status.comments
+        }
+
+        Request.findOneAndUpdate({_id:req.params.id},{$set:{status:update}},
             {upsert:true},
             (err,success)=>(err)?res.json(err):res.json({success}))
 
